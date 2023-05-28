@@ -65,19 +65,3 @@ class AiGcMn:
         for i in range(batch_size):
             processed_output[i] = self.resize(gen_output[i])
         return processed_output
-
-
-if __name__ == '__main__':
-    aigcmn = AiGcMn()
-    labels = [1, 1, 4, 5, 1, 4]
-    labels = torch.Tensor(labels)
-    gen_output = aigcmn.generate(labels)
-
-    # 保存tensor
-    gen_output_numpy = gen_output.detach().numpy()
-    gen_output_numpy.tofile('./output/tensor.csv', sep=',')
-    print("Saved csv file!")
-
-    # 保存图片
-    save_image(gen_output, 'output/output.png')
-    print("Successfully saved output.")
