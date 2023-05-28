@@ -35,11 +35,10 @@ class Generator(nn.Module):
 
 
 class AiGcMn:
-    def __init__(self):
+    def __init__(self, gen_path):
         # 初始化生成器
         self.gen = Generator()
-        self.gen_path = './nets/generator.pth'
-        self.gen.load_state_dict(torch.load(self.gen_path))
+        self.gen.load_state_dict(torch.load(gen_path))
         self.resize = transforms.Resize(28)
 
         # 初始化独热编码表
