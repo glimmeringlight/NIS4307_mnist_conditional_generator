@@ -46,3 +46,9 @@ print("Successfully saved output.")
 ```
 
 完整示例代码可见：[此处](./example.py)。
+
+## 训练效果
+
+20次训练的训练过程。
+
+![](./docs/result.gif)
